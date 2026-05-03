@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Adnan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #0f172a;
+            --accent: #10b981;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .cv-wrapper {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* --- LEFT COLUMN (SIDEBAR) --- */
+        .sidebar {
+            flex: 1;
+            min-width: 320px;
+            background: var(--dark);
+            color: white;
+            padding: 50px 40px;
+        }
+
+        .profile-box { text-align: center; margin-bottom: 40px; }
+        
+        /* REVISI: Bingkai Profil Polos (Buat Foto Muka) */
+        .avatar {
+            width: 160px; /* Sedikit lebih besar biar gagah */
+            height: 160px;
+            /* GANTI: Gradasi dihilangkan, pakai warna sidebar polos */
+            background: #1e293b; 
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* GANTI: Shadow dihaluskan */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            /* GANTI: Border warna tipis biar rapi */
+            border: 2px solid rgba(255,255,255,0.1);
+            overflow: hidden; /* Wajib biar foto melingkar */
+        }
+
+        /* CSS Wajib buat Foto Muka kamu */
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Biar foto gak gepeng, kepotong rapi */
+            display: block;
+        }
+
+        /* Tempat placeholder kalau foto belum ada */
+        .avatar span {
+            font-size: 60px;
+            opacity: 0.3;
+        }
+
+        .name { font-size: 32px; font-weight: 800; letter-spacing: -1px; }
+        .role { color: var(--primary); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+
+        .contact-list { margin-top: 40px; }
+        .contact-item { margin-bottom: 20px; font-size: 14px; opacity: 0.8; }
+        .contact-item b { display: block; color: var(--primary); font-size: 11px; text-transform: uppercase; }
+
+        /* --- RIGHT COLUMN (CONTENT) --- */
+        .content {
+            flex: 2;
+            min-width: 300px;
+            width: 100%;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        h2 { 
+            font-size: 24px; 
+            margin-bottom: 25px; 
+            display: flex; 
+            align-items: center; 
+            font-weight: 800;
+        }
+        
+        h2::before {
+            content: '';
+            width: 35px;
+            height: 5px;
+            background: var(--primary);
+            margin-right: 15px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px dashed #cbd5e1;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .time { font-size: 12px; font-weight: 700; color: var(--primary); }
+        .job-title { font-size: 18px; font-weight: 700; margin: 5px 0; }
+        .company { font-size: 14px; font-weight: 600; color: #64748b; margin-bottom: 10px; }
+
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-pill {
+            padding: 10px 18px;
+            background: white;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+        .skill-pill:hover { 
+            transform: translateY(-5px); 
+            background: var(--primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px; }
+            .sidebar { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="sidebar">
+            <div class="profile-box" data-aos="fade-down" data-aos-delay="200">
+                <div class="avatar">
+                    <img src="adnan.jpg" alt="Foto Profil Restu">
+                    
+                    
+                </div>
+                <h1 class="name">Adnan</h1>
+                <p class="role">Fresh Graduate</p>
+            </div>
+
+            <div class="contact-list" data-aos="fade-up" data-aos-delay="400">
+                <div class="contact-item"><b>Lokasi</b>Depok, Jawa Barat</div>
+                <div class="contact-item"><b>WhatsApp</b>++62 895-6139-74430</div>
+                <div class="contact-item"><b>Email</b>adnan@email.com</div>
+            </div>
+
+            <div style="margin-top: 50px;" data-aos="fade-up" data-aos-delay="600">
+                <h2 style="font-size: 16px; color: white; border: none;">Keahlian</h2>
+                <div class="skills-grid">
+                    <div class="skill-pill">HTML</div>
+                    <div class="skill-pill">CSS</div>
+                    <div class="skill-pill">PHP</div>
+                    <div class="skill-pill">Python</div>
+                    <div class="skill-pill">MySQL</div>
+                    <div class="skill-pill">JavaScript</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section" data-aos="fade-left" data-aos-delay="300">
+                <h2>Profil</h2>
+                <p style="color: #64748b; font-size: 15px;">Lulusan PPLG yang memiliki passion tinggi dalam dunia web dan game, serta saya mampu berkomunikasi dengan baik secara team maupun individu</p>
+            </div>
+
+            <div class="section" data-aos="fade-left" data-aos-delay="500" style="margin-top: 40px;">
+                <h2>Pengalaman</h2>
+                
+                <div class="timeline-item">
+                    <span class="time">MEI 2026</span>
+                    <div class="job-title">Front Office Service (PKL)</div>
+                    <div class="company">Kelurahan Tapos</div>
+                    <p style="font-size: 14px; color: #64748b;">Melayani administrasi warga dan mengelola data kependudukan secara digital.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="time">2025</span>
+                    <div class="job-title">Warehouse Staff</div>
+                    <div class="company">Shopee Xpress (SPX)</div>
+                    <p style="font-size: 14px; color: #64748b;">Menangani manajemen barang masuk/keluar dan koordinasi tim lapangan.</p>
+                </div>
+            </div>
+
+            <div class="section" data-aos="fade-left" data-aos-delay="700" style="margin-top: 40px;">
+                <h2>KEMAMPUAN</h2>
+                <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--primary);">Keahlianku</h4>
+                    <p style="font-size: 13px; color: #64748b; margin-top: 5px;">mampu berkomunikasi dengan baik serta mampu beradaptasi</p>
+                </div>
+            </div>
+            
+<div class="section" data-aos="fade-left" data-aos-delay="700" style="margin-top: 40px;">
+    <h2>PENDIDIKAN</h2>
+    
+    <div class="timeline-item">
+        <span class="time">2023 - 2026</span>
+        <div class="job-title">SMK ASY-SYIFA DEPOK (PPLG)</div>
+        <div class="company">Pengembangan Perangkat Lunak dan Gim</div>
+        <p style="font-size: 14px; color: #64748b;">Fokus pada pemrograman web, basis data, dan pengembangan aplikasi mobile.</p>
+    </div>
+
+    <div class="timeline-item">
+        <span class="time">2020 - 2023</span>
+        <div class="job-title">MTS DARUSSALAM</div>
+        <div class="company">Lulusan Tahun 2023</div>
+        <p style="font-size: 14px; color: #64748b;">Aktif dalam kegiatan organisasi siswa dan pengembangan minat teknologi.</p>
+    </div>
+
+    <div class="timeline-item">
+        <span class="time">2014 - 2020</span>
+        <div class="job-title">SD Sukatani 04</div>
+        <div class="company">Lulusan Tahun 2020</div>
+        <p style="font-size: 14px; color: #64748b;">Pendidikan dasar di Sukatani, Depok.</p>
+    </div>
+</div>
+
+            </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>
